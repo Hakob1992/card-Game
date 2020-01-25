@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: black;
+    height: 100vh;
+    overflow-x: hidden;
+    color: yellow;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.title {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.title h1 {
+    font-size: 86px;
+    font-weight: normal;
+}
+
+.info {
+    width: 65%;
+    text-align: right;
+    margin: 30px 0;
+    color: white;
+    font-size: 20px;
+}
+
+
+.card-box {
+    margin: 0 auto;
+    background-color: rgba(66, 44, 37, 0.38);
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.card {
+    width: 110px;
+    height: 150px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-size: cover;
+    box-shadow: -1px -1px 5px 0 rgba(0, 0, 0, 0.75);
+    border-radius: 12px;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card.show .card-first {
+    transform: rotateY(-180deg);
+}
+
+.card.show .card-back {
+    transform: rotateY(0);
+}
+
+.card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+
+}
+
+.card-first, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.card-first img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card:hover {
+    transform: translateY(5px);
+
+}
+
+.card.matched {
+   transform: rotate(15deg);
+
+}
